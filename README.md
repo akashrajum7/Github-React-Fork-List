@@ -1,3 +1,17 @@
+# Github-React-Fork-List
+
+Application developed as part of a requirement for Interview for the position of a Full Stack developer at The Live Green Co.
+
+## To-Do's
+
+- [ ] Obtain the users who have forked the React repo (https://github.com/facebook/react/) using the GitHub API.
+- [ ] Paginate.
+- [ ] Displays the list of users who have forked the repo in a list with card layout.
+- [ ] Include a "follow" button, On clicking the follow button, using my API key set in a config file, I should be able to follow that user.
+- [x] Write a README on the process to configure and use your application
+- [x] Please include good commit messages to explain the development process and approach continuously as you develop the project
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
