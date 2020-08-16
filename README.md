@@ -11,11 +11,15 @@ Application developed as part of a requirement for Interview for the position of
 - [x] Obtain the users who have forked the React repo (https://github.com/facebook/react/) using the GitHub API.
 - [x] Paginate.
 - [x] Displays the list of users who have forked the repo in a list with card layout.
-- [ ] Include a "follow" button, On clicking the follow button, using my API key set in a config file, I should be able to follow that user.
+- [x] Include a "follow" button, On clicking the follow button, using my API key set in a config file, I should be able to follow that user.
 - [x] Write a README on the process to configure and use your application
 - [x] Please include good commit messages to explain the development process and approach continuously as you develop the project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Setup
+
+* Rename `.env.format` to `.env.development` and please get your API key from [here](https://github.com/settings/tokens/new?scopes=repo) and place your key in the file.
 
 ## Available Scripts
 
