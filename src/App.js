@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./components/Header";
-import Users from "./components/Users";
+import UserDeck from "./components/UserDeck";
 
 function App() {
   return (
     <div>
       <Header />
-      <Users />
+      <UserDeck />
     </div>
   );
 }
