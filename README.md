@@ -1,5 +1,9 @@
 # Github-React-Fork-List
 
+⚠️ **DO NOT DEPLOY THIS APP TO A PUBLIC URL** ⚠️
+
+`Since this is a frontend application, all the API key's are exposed to anyone visiting the website, so please avoid making this app publicly available`
+
 Application developed as part of a requirement for Interview for the position of a Full Stack developer at The Live Green Co.
 
 ## To-Do's
@@ -10,7 +14,6 @@ Application developed as part of a requirement for Interview for the position of
 - [ ] Include a "follow" button, On clicking the follow button, using my API key set in a config file, I should be able to follow that user.
 - [x] Write a README on the process to configure and use your application
 - [x] Please include good commit messages to explain the development process and approach continuously as you develop the project
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
