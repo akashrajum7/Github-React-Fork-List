@@ -11,6 +11,7 @@ function Header() {
       <Navbar className="justify-content-around">
         <Navbar.Brand>
           <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+          <span>react-fork-list</span>
         </Navbar.Brand>
       </Navbar>
     </Container>
