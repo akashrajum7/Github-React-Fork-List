@@ -5,22 +5,43 @@ import UserCard from "./UserCard";
 import parse from "parse-link-header";
 import Pagination from "react-js-pagination";
 import Spinner from "react-bootstrap/Spinner";
+import "./UserDeck.css";
 
 function Users() {
   const [Page, setPage] = useState(1);
-  const [lastPage, setLastPage] = useState(984);
+  const [lastPage, setLastPage] = useState(1);
   const [Forks, setForks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const handleFollow = async (name) => {
+    const followResponse = await octokit.request(
+      "PUT /user/following/{username}",
+      {
+        username: name,
+      }
+    );
+    if (followResponse.status === 204) {
+      alert(`You have followed ${name}`);
+    }
+    // console.log("Follow: ", name);
+  };
+
   let userCards = Forks.map((fork) => {
     let { login, avatar_url, id } = fork.owner;
-    return <UserCard name={login} avatar_url={avatar_url} key={id}></UserCard>;
+    return (
+      <UserCard
+        name={login}
+        avatar_url={avatar_url}
+        handleFollow={handleFollow}
+        key={id}
+      ></UserCard>
+    );
   });
 
   useEffect(() => {
     const getForks = async () => {
       setIsLoading(true);
-      const response = await octokit.request(
+      const forkResponse = await octokit.request(
         "GET /repos/{owner}/{repo}/forks?page={Page}",
         {
           owner: "facebook",
@@ -28,11 +49,14 @@ function Users() {
           Page,
         }
       );
-      let parsed = await parse(response.headers.link);
+      let parsed = await parse(forkResponse.headers.link);
       if (parsed.hasOwnProperty("last")) {
         setLastPage(parsed.last.page);
       }
-      setForks(response.data);
+
+      const newForks = forkResponse.data;
+
+      setForks(newForks);
       setIsLoading(false);
     };
     getForks();

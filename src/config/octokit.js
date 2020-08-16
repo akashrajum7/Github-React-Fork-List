@@ -1,8 +1,9 @@
 import { Octokit } from "@octokit/rest";
-import dotenv from "dotenv";
 
-dotenv.config();
+const auth = process.env.REACT_APP_GITHUB_ACCESS_TOKEN;
 
-const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
+const octokit = new Octokit({
+  auth,
+});
 
 export default octokit;
